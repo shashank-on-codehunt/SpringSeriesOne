@@ -12,15 +12,18 @@ public class Books {
     private long id;
     private String title;
     private String Isbn;
-    private String publisher;
+    @OneToOne
+    private Publisher publisher;
 
-    public Books(String title, String isbn, String publisher) {
+    public Books(){
+    }
+    public Books(String title, String isbn, Publisher publisher) {
         this.title = title;
         Isbn = isbn;
         this.publisher = publisher;
     }
 
-    public Books(String title, String isbn, String publisher, Set<Author> authors) {
+    public Books(String title, String isbn, Publisher publisher, Set<Author> authors) {
         this.title = title;
         Isbn = isbn;
         this.publisher = publisher;
@@ -77,11 +80,11 @@ public class Books {
         Isbn = isbn;
     }
 
-    public String getPublisher() {
+    public Publisher getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(String publisher) {
+    public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
 
