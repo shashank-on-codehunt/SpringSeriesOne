@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 public class PropertyInjectedController {
     //we can also change the reference name or the name of the property can also be same as bean name thats a shortcut of not using Qualifier
     @Autowired
-    @Qualifier("greetingServiceImpl")
     public GreetingService greetingService;
     public String sayHello(){
         return greetingService.sayGreetings();
